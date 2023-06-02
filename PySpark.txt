@@ -1,0 +1,19 @@
+Applications of Sqpark:
+  Streaming data
+  Machine learning
+  Batch data 
+  ETL Pipelines
+  Full load and replication on going
+
+1. Why SPARK?
+  Speed 
+  Distributed
+  Advanced Analytics
+  Real Time 
+  Powerful Caching
+  Fault Tolerant 
+  Deployment 
+
+2. SPARK ecosystem:
+  Spark SQL -> Spark Streaming -> Spark MLlib -> Spark Graphx 
+  Spark Core API can be written in Java/Scala/Python/R.

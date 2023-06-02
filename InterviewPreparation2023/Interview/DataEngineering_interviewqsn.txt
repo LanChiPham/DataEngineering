@@ -1,0 +1,189 @@
+1. What is Hadoop MapReduce?
+    - For proccesing large datasets in parallel across hadoop cluster, hadoop MapReduce framework is used. 
+
+2. What are the difference between relational database and HDFS?
+    - There are 6 major categories we can define RDMBS and HDFS. They are:
+    a. Data types
+    b. proccesing
+    c. Schema on read vs write 
+    d. read/write speed 
+    e. cost 
+
+    Best fit use case:
+    RDMBS:                                                         HDFS
+        1. in RDMBS, it relies on structured data.                 1. Any kind of data can be stored into Hadoop. ie: structured, unstructed, semi-structured data.
+        2. RDMBS provides limited or no proccesing capabilities    2. Hadoop allows us to process the data which is distributed across the cluster in a parallel fashion.
+        3. RDMBS is based Schema on write                          3. Hadoop follows Schema on read policy
+        4. In rdmbs, reads are fast because the schema is already  4. Writes are fast in hadoop because no schema validation happens during hdfs write
+        known
+        5. Licensed softwarem therefore, need to pay for software  5. Hadoop is open source framework, hence no need to pay for software               
+        6. RDMBS is used for OLTP (Online transactional            6. Hadoop is used for data discovery, data analytics or OLAP system.
+        processing) system.
+
+
+3. Explain Bigdata and explain 5v's of Bigdata?
+    - Bigdata is a term of collection of large and complex datasets, that makes it to difficult proccesing using relational database management tools or traditional data processing applications.
+    It is difficult to capture, visualize, curate, search, share, transfer and analyze bigdata.
+
+    IBM has defined bigdata with 5v's they are:
+     a. volume 
+     b. velocity
+     c. variety
+     d. veracity
+     e. value: it is good to have access to bigdata but unless we turn into value it is useless. which means using bigdata adding benifits to the organizations, and they are seen ROI using bigdata.
+
+
+4. What is Hadoop and its component?
+    - When bigdata emerged as a problem, Hadoop evolved as Solution to bigdata. Apache Hadoop is a framework which provides us various services or tools, to store and process the bigdata.
+    - It helps in analyzing bigdata and making business decisions out of it, which cannot be done using traditional systems.
+    - Main components in hadoop are:
+    a. Storage (Namenode, DataNode)
+    b. Processing framework yarn (resrource manager, node manager)
+
+
+5. What are HDFS and Yarn?
+    HDFS (Hadoop distributed file system) is the storage unit of Hadoop. It is responsible for storing different kinds of data as blocks in a distributed environment.
+    It follows master and slave topology.
+    - NameNode: is the master node in the distributed environment and it maintains the metadata information for the blocks of data stored in HDFS like blocj location, replication factors, etc
+    - DataNodes: are the slave nodes, which are responsible for storing data in the HDFS. NameNode manages all the DataNodes.
+
+    - YARN (Yet Another Resource Negotiator) is the processing framework in Hadoop, which manages resources and provides an execution environment to the processes.
+
+    - ResourceManager: It receives the processing requests, and then passes the parts of requests to corresponding NodeManagers accordingly, where the actual processing takes place. It allocates resources to applications based on the needs. 
+
+    - NodeManagers: NodeManager is installed on every DataNode and it is responsible for the execution of the task on every single DataNode. 
+
+
+6. Tell me about various Hadoop Daemons and their roles in Hadoop cluster?
+    - Generally approach this question by first explaning the HDFS daemons.
+    ie: NameNode, DataNode, and Secondary NameNode, and then moving on to the Yarn daemons. 
+    ie: ResourceManager, and NodeManager, and lastly explaning the JobHistoryServer.
+    - JobHistoryServer: it maintains information about MapReduce jobs after the application master terminates.
+
+
+7. Compare HDFS with Network attached service (NAS)?
+    a. Network-attached storage (NAS) is a file-level computer data storage server connected to a computer Network providing data access to a heterogeneous group of clients. 
+    NAS can either be a hardware or software which provides services for storing and accessing files. 
+    Whereas Hadoop Distributed File System (HDFS) is a distributed filessystem to store data using commodity hardware. 
+    In HDFS, Data blocks are distributed across all the machines in a cluster.
+    Whereas in NAS data is stored on a dedicated hardware.
+
+
+8. List the difference between Hadoop 1.0 vs Hadoop 2.0?
+    - In Hadoop 1.x, "NameNode" is the single point of failure. In Hadoop 2.x, we have Active and Passive "NameNode". If the active "NameNode" fails, the passive "NameNode" takes charge.
+    Because of this, high availability can be archived in Hadoop 2.x
+
+    - In Hadoop 2.x, YARN provides a central resource manager. with YARN, you can now run multiple applications in Hadoop, all sharing a common resource. MRV2 is a particular type of 
+    distributed application that runs the MapReduce framework on top of YARN. Other tools can also perform data processing via YARN, which was a problem in Hadoop 1.x
+
+9. What are active and passive NameNode?
+    - In a high availability architecture, there are 2 namenodes.
+    i.e: 
+    a. Active "NameNode" is the "NameNode" which works and runs in the cluster
+    b. Passive "NameNode" is a standby "NameNode", which has similar data as active "NameNode"
+
+    When the active "NameNode" fails, the passive "NameNode" replaces the active "NameNode" in the cluster.
+
+10. Why does one remove or add datanodes frequently?
+    - Most attractive features of the Hadoop framework is its utilization of commodity hardware. 
+    However, this leads to frequent "DataNode" crashes in a Hadoop cluster.
+    - Another striking feature of Hadoop framework is the ease of scale in accordance with the rapid growth in data volume. This is why hadoop admins work is to commission or decommnission nodes in hadoop cluster.
+
+
+11. What happens when two clients tries to access same file in hdfs?
+    - When first client requests for file or data hdfs providing access to write, but when second client request it rejects by saying already another client accessing it. 
+
+
+12. How does nameNode tackles data node failures?
+    - NameNode periodically receives a heartbeat(signal) from each of the DataNode in the cluster, which implies DataNode is functioning properly.
+
+13. What will you do when NameNode is down?
+    - Use the file system metadata replica (Fslimage) to start a new NameNode.
+    - Then, configure the DataNodes and clients so that can acknowledge this name NameNode, that is started.
+
+14. What is checkpoint?
+    - Checkpointing is a process that takes an FsImage, edit log and compacts them into a new FsImage.
+    - Thus, instead of replaying an edit log, the NameNode can load the final in-memory state directly from FsImage.
+
+15. What is Hdfs fault tolerant?
+    - When a data stored in over hdfs, namenode replicates the data in server datanode, which has default value of 3.
+    - If any DataNode fails NameNode automatically copies data to another datanode to makesure data is fault tolerant
+
+16. Can Namenode and datanode are commodity hardware?
+    - No, because NameNode built in with high memory space, and with higher quality software but datanode built in with cheaper hardware. 
+
+17. Why do we use Hdfs for files with large data sets but not when there are a lot of small files?
+    - NameNode stores the metadata information regarding the file systems in RAM.
+    - Therefore, the amount of memory produces a limit to the number of files in my HDFS file system. In other words, too many files will lead to the generation of too much metadata.
+    - And,storing these metadata in the RAM will become a challenge. Hence, HDFS is only works with large datasets instead of large no.of small.
+
+
+18. How do you define block, and what is the default block size?
+    - Block are nothing but smallest continuous locations in harddrive where data is stored.
+    Default block size of hadoop 1 is 64mb and hadoop 2 is 128mb.
+
+19. how do you define Rack awareness in hadoop?
+    - Rack Awareness is the algorithm in which the "NameNode" decides how blocks and their replicas are placed, based on rack definitions to minimize network traffic  between "DataNodes" within the same rack.
+
+20. What is difference between hdfs block, and input split?
+    - The "HDFS Block" is the physical division of the data while "Input Split" is the logical division of the data. 
+    - HDFS divides data into blocks to store the blocks together processing, where input split Divides the data into the input split and assign it to the mapper function for processing.
+
+21. Name of three modes which hadoop can run?
+    - Standalone mode
+    - Pseudo-distribution mode
+    - Fully distributed mode
+
+22. What do you know about SequenceFileFormat?
+    - "SequenceFileFormat" is an input format for reading within sequence files.
+    - It is a specific compressed binary file format which is optimized for passing the data between the output of one "MapReduce" job to the input of some other "MapReduce" job.
+
+23. What is HIVE?
+    - Apache HIVE is a data warehouse system built on top of Hadoop and is used for analyzing structured and semi-structured data developed by Facebook.
+    - HIVE abstracts the complexity of Hadoop MapReduce.
+
+24. What is Serde in HIVE?
+    - The "Serde" interface allows you to instruct "HIVE" about how a record should be processed.
+    - A "SerDe" is a combination of a "Serializer" and a "Deserializer"
+    - "Hive" uses "SerDe" (and "FileFormat) to read and write the table's row.
+
+25. Can the default hive metastore used by multiple users at the same time?
+    - "Derby database" is the default "Hive Metastore".
+    - Mutiple users (processes) cannot access it at the same time.
+    - It is mainly used to perform unit tests. 
+
+26. What is the default location for hive to store in table data?
+    - The default location where HIVE stores table data is inside HDFS in /user/hive/warehouse
+
+
+27. What is Apache Hbase?
+    - HBase is an open house, multimensional, distributed, scalable, and noSQL database written in JAVA.
+    - HBase runs on top of HDFS (Hadoop Distributed File System) and provides Big Table (Google) like capabilities to Hadoop.
+    - It is designed to provide a fault-tolerant way of storing the large collection of sparse data sets.
+    - HBase achieves high throughput and low latency by providing faster Read/Write Access on huge datasets.
+
+28. What are the components of apache HBase?
+    - HBase has three major components 
+    ie: HMaster Server, HBase RegionServer and Zookeeper.
+
+    - Region Server: A table can divided into several regions. 
+    A group of regions  is served to the clients by a Region Server.
+
+    - HMaster: It coordinates and manages the Region Server( similar as NameNode manages DataNode in HDFS)
+
+    - Zookeeper: Zookeeper acts like as a coordinator inside HBase distributed environment.
+    It helps in maintaining server state inside the cluster by communicating through sessions.
+
+29. What are components of Region Server?
+    - WAL: Write Ahead log(WAL) is a file attached to every Region Server inside the distributed environment. The WAL stores the new data that hasn't been persisted or committed to permanent storage.
+    - Block Cache: Block Cache resides in the top of Region Server. It stores the frequently read data in the memory.
+    - MenStore: It is the write cache. It stores all the incoming data before commiting it to the disk or permanent memory. There is one MemStore for each column family in a region.
+    - HFile: HFile is stored in HDFS. It stores the actual cells on the disk.
+
+30. WHat is the difference between Hbase and Relation database?
+    - HBase is an open source, multimensional, distributed, scalable and a NoSQL database written in JAVA.
+    - HBase:                                                            - Relation database
+        - It is schema-less                                                  - It is schema-based database
+        - It is column-oriented data store                                   - It is row-oriented data store.
+        - It is used to store de-normilized data                             - It is used to store normilized data
+        - Automated partitioning is done.                                    - There is no such provision or built-in support for partitioning.
