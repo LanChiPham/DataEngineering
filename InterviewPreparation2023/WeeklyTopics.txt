@@ -1,0 +1,77 @@
+
+
+-- Week 1:
+1. 5Vs for Big data: (i) Volume   (ii) Varity   (iii) Velocity    (iv) veracity  and (v) value
+
+2. Monolithic and Distributed system: 
+    (i) Compute 
+    (ii) memory
+    (iii) Storage 
+
+    3 things to be considered to design big data systems:
+        (i) storage 
+        (ii) processing/ computing
+        (iii) Scalability
+
+3. Hadoop and core components:
+    (a) HDFS   (b) MapReduce     (c) YARN
+    (i) hive    (ii) sqoop     (iii) oozie    (iv) pig    (v) HBase
+
+4. Cloud vs On-premise
+    (i) Scalability
+    (ii) Capex vs opex
+    (iii) agility 
+    (iv) geo distribution
+    (v) disaster recovery 
+    (vi) cost 
+
+    Types: public, private and hybrid.
+
+5. Spark : replacement of MapReduce
+
+6. database vs Datawarehouse vs Data lake
+    Database                                    Datawarehouse                                 Data lake
+    Day to day transactional data               Analytical data                               Analytical data
+    Online Transaction Processing - OLTP        Online Analytical Processing - OLAP           Online Analytical Processing - OLAP
+    Structured data                             Structured data                               Structured or unstructed data
+    Holds recent data                           Holds historical data                         Holds historical data
+    Follows schema on write                     Follow schema on write                        Follows schema on read
+    Cost is high                                Cost is medium                                Cost is very low
+    Simple queries                              Complex queries                               Store the data
+    ETL (Extract Transform Load)                ETL (Extract Transform Load)                  ELT (Extract Load Transform)
+    i.e: Online banking Transaction             i.e: Teradata                                 i.e: HDFS, Amazon S3, Azure ADLS Gen2
+    (Oracle, MySQL)
+
+
+7. BigData picture:
+    (i) Collect data from multiple sources 
+    (ii) Ingestion
+    (iii) Storage (data lake)
+    (iv) Preprocessing 
+    (v) Serving layer
+    (vi) Visualization
+
+
+8. Data Pipeline workflow Visualization for On-premise
+    Database (source) -> Sqoop(Ingestion) -> HDFS (storage) -> MapReduce/Spark(processing) -> HIVE(serving)
+
+
+9. Datapipeline workflow Visualization for Cloud:
+    Multiple Sources -> Azure Data Factory-ADF(Ingestion) -> ADLS Gen2(storage) -> Azure Databricks / Synapse(processing)-> Azure SQL / Cosmo DB(serving)
+    
+
+10. Example Data Pipeline Workflow tools and technologies for On-premise and Cloud
+                    On-premise(Hadoop)               Azure Cloud                    AWS Cloud         
+                
+Source              MySQL Database table             Multiple sources               Multiple sources
+Ingestion           Sqoop                            ADF                            AWS GLUE
+Storage             HDFS                             ADLS Gen2                      Amazon S3
+Processing          MapReduce / Spark                Azure Databricks / Synapse     Athena / Redshift
+Serving layer       HBase                            Azure SQL / Cosmo DB           AWS RDS / Dynamo DB
+
+
+11. HDFS architecture: (i) master and slave         (ii) Name node and data node
+
+12. Roles of Data Engineer: 
+    bridge between data owner and data consumer 
+    major tasks: ingest data, store in data lake, process/transform, serving layers.

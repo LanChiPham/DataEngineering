@@ -187,3 +187,108 @@
         - It is column-oriented data store                                   - It is row-oriented data store.
         - It is used to store de-normilized data                             - It is used to store normilized data
         - Automated partitioning is done.                                    - There is no such provision or built-in support for partitioning.
+
+31. What is Apache Spark?
+    - Apache Spark is a framework for real-time data analytic in ditributed computing environment.
+    - It executes in-memory computations to increase the speed of data processing.
+    - It is 100x faster than MapReduce for large-scale data processing by exploiting in-memory computations and other optimizations
+
+32. Can you build Spark with any particular Hadoop version?
+    - Yes, Spark can be built with any version of Hadoop.
+
+33. What is RDD?
+    - RDD is an acronym for Resilient Distribution Datasets - a fault tolerant collection of operational elements that run parallel.
+    - The partitioned data in RDD are immutable and ditributed, which is a key component of Apache Spark.
+
+34. Are Hadoop and BigData are co-related?
+    - Big Data is an asset, while Hadoop is an open-source software program, which accomplishes a set of goals and objectives to deal with that asset.
+    - Hadoop is used to process, store, and analyze complex unstructed data sets through specific proprietary algorithms and methods to derive actionable insights.
+    ->  so YES, they are related but are not alike.
+
+35. Why is Hadoop used in bigdata analytic?
+    - Hadoop allows running many exploratory data analysis tasks on full datasets, without sampling. 
+    - Features that makes Hadoop an essential requirement for BigData are:
+            - Data collection
+            - Storage 
+            - Processing
+            - Runs independently
+
+36. Name of some of the important tools used for data analytics?
+    - The big data tools are:
+        - NodeXL
+        - KNIME
+        - Tableau
+        - Solver
+        - OpenRefine
+        - Rattle GUI
+        - Qlikview
+
+37. What is FDCK?
+    - FSCK or File system check is a command used by HDFS.
+    - It checks if any file is corrupt, or if there are some missing blocks for a file. FSCK generates a summary report, which lists the overall health of the file system.
+
+38. What are the difference core methods of Reducer?
+    - There are three core methods of a reducer:
+        - setup() - It helps to configure parameters like heap size, distributed cache, and input data size.
+        - reduce() - Also known as once per key with the concerned reduce task. It is the heart of the reducer.
+        - cleanup() - It is a process to clean up all the temporary files at the end of a reducer task.
+
+39. What are the most common Input fileformats in Hadoop?
+    - The most common input formats in Hadoop are:
+        - Key-value input format
+        - Sequence file input format
+        - Text input format
+
+40. What are the difference fileformats that can be used in Hadoop?
+    - File formats used with Hadoop, include - 
+        CSV
+        JSON
+        Columnar
+        Sequence files
+        AVRO
+        Parquet file
+
+41. What is commonity hardware?
+    - commodity hardware is the basic hardware resource to run the Apache Hadoop framework.
+    - It is a common term used for affordable devices, usually compatible with other such devices.
+
+42. What do you mean by logistic regression?
+    - Also known as the logit model, logistic regression is a technique to predict the binary result from a linear amalgamation of predictor variables.
+
+43. Name of porr number for namenode, task tracker, job tracker?
+    - NameNode - Port 50070
+    - Task Tracker - Port 50060
+    - Job Tracker - Port 50030
+
+44. Name the most popular data management tools that used with edge nodes in hadoop?
+    - The most commonly used data management tools that work with Edge Nodes in Hadoop are:
+        - Oozie 
+        - Ambari
+        - Pig 
+        - Flume 
+
+45. What is block in Hadoop distributed file system?
+    - When the file is stored in HDFS, all file system breaks down into a set of blocks.
+
+46. What is the functionality of jps command?
+    - The 'jps' command enables us to check if the Hadoop daemons like namenode, datanode, resourcemanager, nodemanager.
+    etc: are running on the machine.
+
+47. What types of biases can happen through sampling?
+    - Three types of biases can happen through sampling, which are:
+        - Survivorship bias
+        - Selection bias
+        - Under covrage bias
+
+48. What is the difference between Sqoop and Distcp?
+    - DistCP is used for transferring data between clusters, while Sqoop is used for transferring data between Hadoop and RDBMS, only.
+
+49. How much data is enough to get a valid outcome?
+    - Yes, it is. Hadoop is a distributed file system. It allows us to store and manage large amounts of data in a cloud of machines, managing data redundancy.
+    - The main benefit of this is that since the data is stored in multiple nodes, it is better to process it in a distributed way. Each node is ablt to process the data stored on it instead of wasting time moving the data across the network.
+    - In contrast, in a relational database computing system, we can query data in real-time, but it is not efficient to store data in tables, records, and columns when the data is huge.
+    - Hadoop also provides a schema for building a column database with Hadoop HBase for run-time queries on rows. 
+
+50. What is BackUp Node?
+    - A Backup Node is an extended checkpoint node for performing checkpointing and supporting the online streaming of file system edits.
+    - Its functionality is similar to checkpoint, and it forces synchronization with NameNode. 
