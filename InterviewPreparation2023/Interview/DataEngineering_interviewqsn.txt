@@ -292,3 +292,11 @@
 50. What is BackUp Node?
     - A Backup Node is an extended checkpoint node for performing checkpointing and supporting the online streaming of file system edits.
     - Its functionality is similar to checkpoint, and it forces synchronization with NameNode. 
+
+
+51. What are the common data challenges?
+    - The most common data challenges are:
+        - Ensuring data integrity 
+        - Achieving a 360-degree view
+        - Safeguarding user privacy
+        - Taking the right business action with real-time resonance.
