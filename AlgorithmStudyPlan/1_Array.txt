@@ -1,0 +1,56 @@
+1. Array: https://www.techinterviewhandbook.org/algorithms/array/
+
+    - Array holds values of the same type at contiguous memory locations. 
+    - In an array, we're usually concerned about two things: (i) The position/index of an element (ii) the element itself.
+    - Different programming languages implement arrays under the hood differently and can affect the time complexity of operations you make to array.
+    - Size of array is dynamic and you do not need to have size defined beforehand when creating the array.
+
+
+    - Advantages:
+        . Store multiple elements of the same type with one single variable name.
+        . Accessing elements is fast as long as you have the index, as opposed to linked lists where you have to traverse from the head.
+
+    - Disadvantages:
+        . Addition or removal of elements into/from the middle of an array is slow because the remaining elements need to be shifted to accomodate the new/missing element.
+        An exception to this is if the position to be inserted/removed is at the end of the array.
+        . For certain language where the array size is fixed, it cannot alter the sizes after initialization. If an insertion causes the total number of elements to be exceed the size,
+        a new array has to be allocated and the existing elements have to be copied over. The act of creating a new array and transferring elements over takes O(n) time.
+
+
+    - Learning resources:
+        - Readings: https://www.guru99.com/array-data-structure.html
+        - Videos: https://www.coursera.org/lecture/data-structures/arrays-OsBSF
+
+    
+    - Common terms: you see when doing problems involving arrays
+        - Subarray: a range of contiguous values within an array.
+        ie: given an array [2,3,6,1,5,4], [2,3,6] is a Subarray while [3,1,5] is not subarray.
+        - Subsequence: a sequence that can be defined from the given sequence by deleting some or no elements without chaging the order of the remaining elements.
+        ie: given an array [2,3,6,1,5,4], [3,1,5] is a Subsequence but [3,5,1] is not a subsequence.
+
+    
+    - Time complexity:
+        (i) Access: O(1)
+        (ii) Search: O(n)
+        (iii) Search(sorted array): O(log(n))
+        (iv) Insert: O(n) - insertion would require shidting all the subsequent elements to the right by one and that takes O(n)
+        (v) Insert(at the end): O(1) - special case of insertion where no other element needs to be shifted.
+        (vi) Remove: O(n) - removal would require shifting all the subsequent elements to the left by one and that takes O(n)
+        (vii) Remove(at the end): O(1) - special case of removing where no ther element needs to be shifted.
+
+
+    - Corner cases:
+        - Empty sequence
+        - sequence with 1 or 2 elements
+        - sequence with repeated elements
+        - duplicated values in the sequence. 
+
+
+    - Techniques that can be applied:
+        - Sliding window
+        - Two pointers
+        - Traversing from the right
+        - sorting the array
+        - Precomputation
+        - Index as a hash keyword
+        - Traversing the array more than once

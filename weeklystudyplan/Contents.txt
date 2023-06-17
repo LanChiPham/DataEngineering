@@ -1,0 +1,43 @@
+wk-1
+----
+1. Big-data introduction 
+2. Five Vs (i. Volume ii. Variety iii. Velocity iv. Veracity v. Value 
+3. Monolithic Vs Distributed System
+   3.1. Storage
+   3.2. Processing / Computation
+   3.3. Scalability
+4. Hadoop - Introduction 
+5. 3 Core Components of Hadoop ( HDFS | MapReduce | YARN )
+6. Hadoop Core & Ecosystem technologies
+   6.1 Sqoop 6.2 Pig 6.3  Hive 6.4 Oozie 6.5 HBase
+7. Challenges with Hadoop
+	7.1. MapReduce is very slow 7.2. Need to learn Different components 
+8. Cloud and its Advantages
+   8.1 Advantages of Cloud 
+		i. Scalable ii.CapEx Vs OpEx iii. Agility iv. GeoDistribution v.Disaster Recovery v1.Cost Effective
+   8.2 Cloud Types
+	 i. Public Cloud ii. Private iii. Hybrid
+   8.3 On-Premise Vs Private Cloud
+8. Apache Spark
+   i. General Purpose ii. In Memory iii. Compute Engine
+   (replacement of compute engine MR )		
+	Storage - Ex: HDFS | Amazon S3 | Azure ADLS Gen2 | Google Cloud | local storage
+	Resource Manager - Ex: YARN | Mesos | Kubernetes
+	Spark in 10x to 100x faster than traditional Mapreduce as it stores and
+	processes the data In Memory
+9. Database Vs Data Warehouse Vs Data Lake
+10. Big Data - Data Engineering Flow
+    Data from multiple sources -> Ingestion -> Storage (Data Lake) -> Processing -> Serving Layer -> Visualization Tools 
+	( Database(source) -> Sqoop(Ingestion) -> HDFS(storage) -> MapReduce/Spark(processing) -> Hive(Serving)	 )
+	MySQL RDBMS -> Sqoop -> HDFS -> Mapreduce/Spark -> Hive/MySQl -> Tableau
+11. Categories of Computation
+	Serverless computing
+	Serverful computing
+12. HDFS Architecture
+    i. Master and Slave 
+    ii. Name Node and Data Node 
+13. Role of Data Engineers
+    Data engineers act as a glue between Data Owners and the Data Consumers.
+	
+wk2
+----

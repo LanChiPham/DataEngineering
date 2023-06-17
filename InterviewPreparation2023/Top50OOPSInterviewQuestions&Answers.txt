@@ -216,3 +216,14 @@
 
 50. Which OOPS concept exposes only the necessary information to the calling functions?
     - Encapsulation
+
+
+51. What is Test Driven Development(TDD)?
+    - is a software advocated by agile software Development methodologies, in which tests are written in advance of source-code development.
+    These tests, intended to initially fail in the absense of any substantial implement, effectively constitute a specification of the functionality and behavior
+    of the software code, which can be tested as it is being developed. 
+
+52. The three laws:
+    (i) You may not write production code unless you've first written a failing unit test.
+    (ii) You may not write more of a unit test than is sufficient to fail.
+    (iii) You may not write more production code than is sufficient to make a failing unit test pass. 
