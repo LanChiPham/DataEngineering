@@ -1,0 +1,51 @@
+1. HDFS
+-------
+- Master and Slave architecture 
+- Name Node and Data node 
+- storing technique for huge file(e.g. 1 GB ) 
+- how the client request to read the file is handled ?
+  i. file read request goes to name node 
+  ii. check meta data table to find the location 
+  iii. name node passes the location information to the client 
+- reason for using the block size 128 GB
+- when the block size is small 
+  advantage: (i) leads to an increase in the no of block. so increase in parallelism. 
+  dis-advantage: (i) name node will get overburdened with storing many entries. 
+- when the block size is very huge 
+  advantage: name node is less burdened as the volume of meta data is less. 
+  dis-advantage: less number of nodes gives less parallelism. 
+- Name node federation: more than one name node to handle the growing meta data. 
+     (scalability) 
+- solution for the name node failure: secondary name node or passive name node. 
+     (fault tolerance)
+- rack concept : keep data in different geographical locations.
+  (balanced approach is to keep replicas (2 copies) in different rack. 
+- spark installation mode:
+  i. local mode ii. pseudo distribution mode iii. fully distributed mode 
+- Linux Commands:
+  / - root directory 
+  ~ - home directory 
+  cd, ls
+  touch 
+  ls -ltr  
+  chmod, mkdir , rm, rm -R, mv , cp , vi , cat, head, tail, du , grep , exit 
+- hdfs commands:
+  hadoop fs -<<unix command>>
+  or 
+  hdfs dfs -<<unix command>>
+  - -put    (-copyFromLocal)
+  - -get    (-copyToLocal)
+  
+- Cloud Alternatives of HDFS 
+  AWS – Amazon S3
+  Azure – ADLS Gen2 (azure data lake storage generation2)
+
+	1. HDFS + Pyspark
+	2. ADLS gen2 + Databricks
+- HDFS - distributed system. data stored in block form . hdfs is not persistent. data storage is tightly coupled with compute.  only specific cluster can access the data. 
+- ADLS Gen2/amazon S3 - is an object based storage (each object is unique).  persistent (data is not lost when the cluster is terminated). storage is decoupled with compute. any cluster can access the same data (de-coupling) 
+- Distributed processing 
+   Map and Reduce 
+  (K,V) --> Map --> (K,V) ----> Reduce --> (K,V) 
+- Principal of data locality 
+   data is processed on the same machine where it is kept.   

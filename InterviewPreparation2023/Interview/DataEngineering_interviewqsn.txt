@@ -300,3 +300,87 @@
         - Achieving a 360-degree view
         - Safeguarding user privacy
         - Taking the right business action with real-time resonance.
+
+
+52. How do you overcome above mentioned data challenges?
+    - Data challenges can be overcome by:
+        - Adopting data management tools that provide a clear view of data assessment
+        - Using tools to remove any low_quality data 
+        - Auditing data from time to time to ensure user privacy is safeguarded
+        - Using AI-powered tools, or software as a service (SaaS) products to combine datasets and make them usable.
+
+53. What is the hierarachical Clustering algorithm?
+    - The hierarchical grouping algorithm is the one that combines and divides the groups that already exist.
+
+54. What is K-mean clustering?
+    - K mean clustering is a method of vector quantization
+
+55. What is the criteria for good data model?
+    - A good data model -
+        - It should be easily consumed 
+        - Large data changes should be scalable
+        - Should offer predictable performances
+        - Should adapt to changes in requirements
+
+56. Commands for starting up and shutting down the hadoop daemons?
+    - To start all the daemons: ./sbin/start-all.sh
+    - To shut down all the daemons: ./sbin/stop-all.sh
+
+57. Talk about the different tombstone markers used for deletion purpose in Hbase?
+    - There are three main tombstone markers used for deletion in HBase. They are:
+        - Family Delete Marker - for marking all the columns of a column family.
+        - Version Delete Marker - for marking a single version of a single column
+        - Column Delete Marker - for marking all the versions of a single column. 
+
+58. How can bigdata add value to businesses?
+    - ig: Data Analytics helps businesses to transform raw data into meaningful and actionable insights that can shape their businesses strategies.
+    - The most important contribution of Big Data to business is data-driven business decisions.
+
+59. How do you deplot big data solution? (data ingestion -> data storage -> data processing)
+    - Data Ingestion: begin by collecting data from multiple sources, be it social media platforms, log files, business documents, anything relevant to your business.
+                    Data can either be extracted through real-time streaming or in batch jobs
+    
+    - Data storage: Once the data extracted, it can be stored in Hbase, or Hdfs.
+                    While HDFS storage is perfect for sequential access, 
+                    HBase is ideal for random read/write access.
+
+    - Data processing: is done via frameworks like Hadoop, Spark, MapReduce, Flink, and Pig, to name a few.
+
+60.List the different file permissions in hdfs files or directory levels?
+    - There user levels in HDFS - Owner, Group, and Others. For each of the user levels, there are 3 available permissions:
+        - read(r)
+        - write (w)
+        - execute(x)
+
+61. Elaborate on the process that overwrite the replication factor in Hdfs?
+    - in HDFS, 2 ways to overwrite the replication factors 
+            - on file basis
+            - on directory basis
+
+62. Explain overfitting?
+    - overfitting refers to a modeling error that occurs when a function is tightly fit (influenced) by a limited set of data points.
+
+63. What is feature selection?
+    - Feature selection refers to the process of extracting only the required features from a specific dataset.
+    When data is extracted from disparate sources.
+    Features selection can be done via 3 techniques:
+        - Filters method
+        - Wrappers method
+        - Embedded method
+
+64. Define Outliers?
+    - Outliers are the values that are far removed from the group, they do not belong to any specific cluster or group in the dataset.
+    - The presence of outliers affects behavior of the model.
+        - Extreme value analysis
+        - Probabilistic analysis
+        - Linear models
+        - Information-theoretic models
+        - High-dimensional outlier detection
+
+65. How can you handle missing values in Hadoop?
+    - Some ways to estimate the missing values:
+        - regression
+        - multiple data imputation
+        - listwise/pairwise deletion
+        - maximum likelihood estimation
+        - approximate Bayesian bootstrap
